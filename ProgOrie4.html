@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data de Nascimento</title>
+</head>
+<body>
+    <h1>Descubra o dia da semana:</h1>
+    <label for="dia">Qual dia: </label>
+    <input id="dia" type="date">
+    <button onclick='semanal()'>OK</button>
+    <p id="saida"></p>
+    <script>
+        function semanal() {
+        diasemana = new Date(document.getElementById("dia").value);
+        dia_ms = diasemana.getTime() + 10800000;
+        diasemana = new Date(dia_ms);
+        diasemana = diasemana.toString();
+        r = diasemana.slice(0,3);    
+        document.getElementById("saida").innerHTML = r;
+    }
+    </script>  
+</body>
+</html>
